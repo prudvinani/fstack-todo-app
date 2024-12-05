@@ -12,6 +12,7 @@ import { TodoModel } from "./Model/TodoModel"
 
 
 const app=express()
+const port=process.env.PORT ||3000
 interface AuthenticatedRequest extends Request {
     user?: string;
   }
@@ -167,6 +168,6 @@ app.put("/todo/:id",AuthMiddleware,async(req:AuthenticatedRequest,res:Response)=
 
 
 
-app.listen(process.env.PORT || 3000,()=>{
-    console.log(`http://localhost:3000`)
+app.listen(port,()=>{
+    console.log(`Example app listening on port ${port}`)
 })
