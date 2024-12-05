@@ -1,1 +1,1 @@
-{"root":["./src/index.ts","./src/model/usermodel.ts"],"version":"5.6.3"}
+{"root":["./src/middleware.ts","./src/index.ts","./src/model/todomodel.ts","./src/model/usermodel.ts"],"version":"5.6.3"}
