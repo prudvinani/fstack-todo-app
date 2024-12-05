@@ -17,7 +17,7 @@ interface AuthenticatedRequest extends Request {
   }
 app.use(express.json())
 app.use(cors({
-    origin:"http://localhost:5173",
+   
     credentials:true
 }))
 
@@ -172,6 +172,6 @@ app.put("/todo/:id",AuthMiddleware,async(req:AuthenticatedRequest,res:Response)=
 
 
 
-app.listen(3000,()=>{
+app.listen(process.env.PORT,()=>{
     console.log(`http://localhost:3000`)
 })
