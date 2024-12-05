@@ -67,10 +67,8 @@ console.log("You can't create the user Signup ")
 
 app.post("/signin", async (req: Request, res: Response):Promise<any> => {
     try {
-      // Assuming you're using a proper validation for login:
       const { email, password } = req.body;
       
-      // Validate email and password
       if (!email || !password) {
          res.status(400).json({ message: "Email and password are required" });
       }
@@ -81,18 +79,15 @@ app.post("/signin", async (req: Request, res: Response):Promise<any> => {
         return res.status(404).json({ message: "Email does not exist in the database" });
       }
   
-      // Compare hashed password with input password
       const passwordMatch = await bcrypt.compare(password, user.password);
       if (!passwordMatch) {
         return res.status(401).json({ message: "Invalid credentials" });
       }
   
-      // Generate token
       const token = jwt.sign({ id: user._id }, process.env.JWTPASSWORD as string, {
         expiresIn: "1h",
       });
   
-      // Respond with token and user ID
       res.status(200).json({
         success: true,
         token: token,
@@ -172,6 +167,6 @@ app.put("/todo/:id",AuthMiddleware,async(req:AuthenticatedRequest,res:Response)=
 
 
 
-app.listen(process.env.PORT,()=>{
+app.listen(process.env.PORT || 3000,()=>{
     console.log(`http://localhost:3000`)
 })

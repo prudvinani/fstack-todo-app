@@ -122,7 +122,7 @@ const Home: React.FC = () => {
             
             <Input
               placeholder="Enter your title"
-              className="mr-2 hidden md:block w-full"
+              className="mr-2 w-full"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
