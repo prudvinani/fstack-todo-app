@@ -8,7 +8,7 @@ const Lockdata = () => {
     <p className="text-end p-10"><ModeToggle/></p>
       <div className="flex flex-col justify-center items-center w-full pt-36 ">
       <div className="flex items-center ">
-      <p className="md:text-3xl font-semibold tracking-tight mr-2 text-xl ">Welcome to Simple Todo App</p>
+      <p className="md:text-3xl font-semibold tracking-tight mr-2 text-xl ">Welcome to Simple Todo App.📝</p>
       {/* <p><ModeToggle/></p> */}
       </div>
 
